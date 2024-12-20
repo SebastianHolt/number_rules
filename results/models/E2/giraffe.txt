@@ -1,0 +1,41 @@
+#########################################
+
+Pivoting to predict Monkey AND Giraffe generalizations
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cond * language + target + training_acc + (1 | ID)
+   Data: G
+
+     AIC      BIC   logLik deviance df.resid 
+   595.4    625.4   -290.7    581.4      534 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.0085 -0.5541  0.1088  0.5896  4.0946 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ ID     (Intercept) 2.526    1.589   
+Number of obs: 541, groups:  ID, 60
+
+Fixed effects:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         0.06691    1.54404   0.043 0.965433    
+condCAT            -1.87461    0.59735  -3.138 0.001700 ** 
+languageMK         -1.73897    0.38785  -4.484 7.34e-06 ***
+target             -0.39999    0.12026  -3.326 0.000881 ***
+training_acc        4.36350    1.57810   2.765 0.005692 ** 
+condCAT:languageMK  0.69239    0.49923   1.387 0.165464    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cndCAT lnggMK target trnng_
+condCAT     -0.169                            
+languageMK  -0.166  0.490                     
+target      -0.373  0.051  0.074              
+training_cc -0.865 -0.078 -0.057 -0.042       
+cndCAT:lnMK  0.131 -0.588 -0.760 -0.019  0.020

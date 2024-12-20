@@ -1,0 +1,41 @@
+#########################################
+
+First is the pre-registered model, including interaction.
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cond * giraffe_nums + target + training_acc + (1 |      ID)
+   Data: Z
+
+     AIC      BIC   logLik deviance df.resid 
+   359.5    386.7   -172.7    345.5      353 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4386 -0.4105 -0.1497  0.3277  3.2292 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ ID     (Intercept) 5.194    2.279   
+Number of obs: 360, groups:  ID, 60
+
+Fixed effects:
+                         Estimate Std. Error z value Pr(>|z|)    
+(Intercept)               -5.1104     2.9501  -1.732 0.083229 .  
+condCAT                   -1.9987     1.4260  -1.402 0.161041    
+giraffe_numsTRUE           0.2024     1.2941   0.156 0.875732    
+target                    -0.7607     0.1704  -4.464 8.03e-06 ***
+training_acc              10.2527     3.1120   3.295 0.000986 ***
+condCAT:giraffe_numsTRUE   0.4734     1.6447   0.288 0.773478    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cndCAT g_TRUE target trnng_
+condCAT     -0.232                            
+grff_nmTRUE -0.348  0.743                     
+target      -0.151  0.068 -0.005              
+training_cc -0.872 -0.124 -0.011 -0.151       
+cnCAT:_TRUE  0.287 -0.849 -0.786 -0.018  0.001

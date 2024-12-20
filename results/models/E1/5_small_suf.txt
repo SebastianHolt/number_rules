@@ -1,0 +1,39 @@
+#########################################
+
+For subset knowers, does knowing the target predict additive responses?
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + suf + (1 | id)
+   Data: S_SB
+
+     AIC      BIC   logLik deviance df.resid 
+   537.9    563.6   -263.0    525.9      522 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0680 -0.4820 -0.3278  0.3973  4.8898 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.473    1.213   
+Number of obs: 528, groups:  id, 59
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -1.66793    1.39281  -1.198  0.23110   
+cd1         -1.28823    0.41169  -3.129  0.00175 **
+expected    -0.51860    0.19259  -2.693  0.00709 **
+age          0.05751    0.03041   1.891  0.05857 . 
+sufTRUE      0.16351    0.36082   0.453  0.65042   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd age   
+cd1      -0.015                     
+expected -0.405  0.060              
+age      -0.845 -0.154 -0.092       
+sufTRUE  -0.306  0.015  0.649 -0.102

@@ -1,0 +1,323 @@
+All Small Sets:
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + CP + expected + age + (1 | id)
+   Data: S
+
+     AIC      BIC   logLik deviance df.resid 
+  1003.4   1033.1   -495.7    991.4     1026 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4359 -0.4856 -0.2128  0.3912  4.7633 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 3.077    1.754   
+Number of obs: 1032, groups:  id, 115
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.43328    1.07833  -3.184 0.001453 ** 
+cd1         -1.50071    0.39488  -3.800 0.000144 ***
+CPTRUE       1.05378    0.51814   2.034 0.041973 *  
+expected    -0.42831    0.10851  -3.947 7.91e-05 ***
+age          0.09480    0.02423   3.912 9.15e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    CPTRUE expctd
+cd1      -0.024                     
+CPTRUE    0.464  0.055              
+expected -0.251  0.043 -0.025       
+age      -0.908 -0.164 -0.635 -0.045
+
+
+
+#########################################
+
+Subset only small sets
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + (1 | id)
+   Data: S_SB
+
+     AIC      BIC   logLik deviance df.resid 
+   536.2    557.5   -263.1    526.2      523 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0307 -0.4874 -0.3215  0.3963  4.8691 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.517    1.232   
+Number of obs: 528, groups:  id, 59
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.47528    1.33817  -1.102  0.27026    
+cd1         -1.29194    0.41578  -3.107  0.00189 ** 
+expected    -0.57567    0.14659  -3.927  8.6e-05 ***
+age          0.05895    0.03056   1.929  0.05378 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd
+cd1      -0.011              
+expected -0.282  0.065       
+age      -0.926 -0.154 -0.035
+
+
+
+#########################################
+
+CP only small sets
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + (1 | id)
+   Data: S_CP
+
+     AIC      BIC   logLik deviance df.resid 
+   462.9    484.0   -226.5    452.9      499 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2132 -0.3118  0.1687  0.3774  2.8859 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 5.563    2.359   
+Number of obs: 504, groups:  id, 56
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)  -4.7774     2.2892  -2.087  0.03689 * 
+cd1          -1.7681     0.7447  -2.374  0.01758 * 
+expected     -0.2366     0.1632  -1.450  0.14712   
+age           0.1320     0.0405   3.259  0.00112 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd
+cd1       0.004              
+expected -0.189  0.022       
+age      -0.947 -0.179 -0.033
+
+
+
+#########################################
+
+Check for CP:condition interaction
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 * CP + expected + age + (1 | id)
+   Data: S
+
+     AIC      BIC   logLik deviance df.resid 
+  1005.4   1040.0   -495.7    991.4     1025 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4502 -0.4841 -0.2143  0.3898  4.7387 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 3.077    1.754   
+Number of obs: 1032, groups:  id, 115
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.46456    1.09783  -3.156  0.00160 ** 
+cd1         -1.44374    0.54070  -2.670  0.00758 ** 
+CPTRUE       1.11097    0.63776   1.742  0.08151 .  
+expected    -0.42832    0.10852  -3.947 7.91e-05 ***
+age          0.09491    0.02425   3.914 9.06e-05 ***
+cd1:CPTRUE  -0.11956    0.77614  -0.154  0.87758    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+           (Intr) cd1    CPTRUE expctd age   
+cd1        -0.145                            
+CPTRUE      0.261  0.431                     
+expected   -0.246  0.030 -0.022              
+age        -0.897 -0.099 -0.497 -0.045       
+cd1:CPTRUE  0.187 -0.683 -0.583  0.003 -0.032
+
+
+
+#########################################
+
+Look at subset-knower knower-level effect
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + kl + (1 | id)
+   Data: S_SB
+
+     AIC      BIC   logLik deviance df.resid 
+   533.2    558.8   -260.6    521.2      522 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.9076 -0.4745 -0.3204  0.3977  4.9469 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.327    1.152   
+Number of obs: 528, groups:  id, 59
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -2.08055    1.31505  -1.582  0.11362    
+cd1         -1.28577    0.39869  -3.225  0.00126 ** 
+expected    -0.57545    0.14655  -3.927 8.61e-05 ***
+age          0.04723    0.02967   1.592  0.11136    
+kl           0.44173    0.19930   2.216  0.02666 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd age   
+cd1      -0.011                     
+expected -0.277  0.068              
+age      -0.853 -0.140 -0.029       
+kl       -0.210 -0.032 -0.047 -0.169
+
+
+
+#########################################
+
+Look knower-level sufficiency
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + suf + (1 | id)
+   Data: S_SB
+
+     AIC      BIC   logLik deviance df.resid 
+   537.9    563.6   -263.0    525.9      522 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0680 -0.4820 -0.3278  0.3973  4.8898 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.473    1.213   
+Number of obs: 528, groups:  id, 59
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -1.66793    1.39281  -1.198  0.23110   
+cd1         -1.28823    0.41169  -3.129  0.00175 **
+expected    -0.51860    0.19259  -2.693  0.00709 **
+age          0.05751    0.03041   1.891  0.05857 . 
+sufTRUE      0.16351    0.36082   0.453  0.65042   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd age   
+cd1      -0.015                     
+expected -0.405  0.060              
+age      -0.845 -0.154 -0.092       
+sufTRUE  -0.306  0.015  0.649 -0.102
+
+
+
+#########################################
+
+Large Sets task
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + (1 | id)
+   Data: L
+
+     AIC      BIC   logLik deviance df.resid 
+   373.8    394.8   -181.9    363.8      486 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.6838 -0.1568 -0.0647  0.3351  4.4148 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 14.36    3.789   
+Number of obs: 491, groups:  id, 56
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -7.83642    3.81738  -2.053  0.04009 * 
+cd1         -2.20210    1.22920  -1.791  0.07321 . 
+expected    -0.17695    0.06435  -2.750  0.00596 **
+age          0.18534    0.06459   2.869  0.00411 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd
+cd1       0.030              
+expected -0.175  0.050       
+age      -0.946 -0.174 -0.079
+
+
+
+#########################################
+
+Multiplier task
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd2 + expected + CP + age + (1 | id) + (1 | cd1)
+   Data: M
+
+     AIC      BIC   logLik deviance df.resid 
+   999.6   1033.4   -492.8    985.6      913 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7079 -0.5528 -0.2161  0.5570  4.5484 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.802    1.342   
+ cd1    (Intercept) 0.000    0.000   
+Number of obs: 920, groups:  id, 115; cd1, 2
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  0.77345    0.83948   0.921   0.3569    
+cd2          0.64282    0.30874   2.082   0.0373 *  
+expected    -1.05157    0.09605 -10.948   <2e-16 ***
+CPTRUE       1.30407    0.41074   3.175   0.0015 ** 
+age          0.02220    0.01802   1.231   0.2181    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd2    expctd CPTRUE
+cd2      -0.239                     
+expected -0.242 -0.074              
+CPTRUE    0.483 -0.021 -0.110       
+age      -0.903  0.070 -0.046 -0.645
+optimizer (Nelder_Mead) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+

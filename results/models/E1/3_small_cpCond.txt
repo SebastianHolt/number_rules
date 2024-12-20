@@ -1,0 +1,41 @@
+#########################################
+
+The pre-registered model, but see if condition interacts with CP knowledge
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 * CP + expected + age + (1 | id)
+   Data: S
+
+     AIC      BIC   logLik deviance df.resid 
+  1005.4   1040.0   -495.7    991.4     1025 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4502 -0.4841 -0.2143  0.3898  4.7387 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 3.077    1.754   
+Number of obs: 1032, groups:  id, 115
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.46456    1.09783  -3.156  0.00160 ** 
+cd1         -1.44374    0.54070  -2.670  0.00758 ** 
+CPTRUE       1.11097    0.63776   1.742  0.08151 .  
+expected    -0.42832    0.10852  -3.947 7.91e-05 ***
+age          0.09491    0.02425   3.914 9.06e-05 ***
+cd1:CPTRUE  -0.11956    0.77614  -0.154  0.87758    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+           (Intr) cd1    CPTRUE expctd age   
+cd1        -0.145                            
+CPTRUE      0.261  0.431                     
+expected   -0.246  0.030 -0.022              
+age        -0.897 -0.099 -0.497 -0.045       
+cd1:CPTRUE  0.187 -0.683 -0.583  0.003 -0.032

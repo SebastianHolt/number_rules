@@ -1,0 +1,39 @@
+#########################################
+
+First, we'll look at the Small Sets task.
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + CP + expected + age + (1 | id)
+   Data: S
+
+     AIC      BIC   logLik deviance df.resid 
+  1003.4   1033.1   -495.7    991.4     1026 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4359 -0.4856 -0.2128  0.3912  4.7633 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 3.077    1.754   
+Number of obs: 1032, groups:  id, 115
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.43328    1.07833  -3.184 0.001453 ** 
+cd1         -1.50071    0.39488  -3.800 0.000144 ***
+CPTRUE       1.05378    0.51814   2.034 0.041973 *  
+expected    -0.42831    0.10851  -3.947 7.91e-05 ***
+age          0.09480    0.02423   3.912 9.15e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    CPTRUE expctd
+cd1      -0.024                     
+CPTRUE    0.464  0.055              
+expected -0.251  0.043 -0.025       
+age      -0.908 -0.164 -0.635 -0.045

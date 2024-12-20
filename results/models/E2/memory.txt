@@ -1,0 +1,43 @@
+#########################################
+
+Did accurate recall of unit words predict generalization accuracy?
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cond * giraffe_nums + target * gz_acc + (1 | ID)
+   Data: Z
+
+     AIC      BIC   logLik deviance df.resid 
+   372.0    403.1   -178.0    356.0      352 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.3451 -0.3686 -0.1661  0.3580  5.0068 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ ID     (Intercept) 6.804    2.608   
+Number of obs: 360, groups:  ID, 60
+
+Fixed effects:
+                         Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                5.5247     1.9874   2.780 0.005439 ** 
+condCAT                   -1.8784     1.5788  -1.190 0.234156    
+giraffe_numsTRUE           0.1557     1.4286   0.109 0.913224    
+target                    -1.1625     0.3057  -3.803 0.000143 ***
+gz_acc                    -2.5239     2.0325  -1.242 0.214329    
+condCAT:giraffe_numsTRUE   0.5565     1.8253   0.305 0.760452    
+target:gz_acc              0.6343     0.3766   1.684 0.092087 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) cndCAT g_TRUE target gz_acc cCAT:_
+condCAT     -0.526                                   
+grff_nmTRUE -0.545  0.742                            
+target      -0.746  0.051 -0.004                     
+gz_acc      -0.625 -0.052 -0.061  0.736              
+cnCAT:_TRUE  0.442 -0.856 -0.785 -0.023  0.043       
+targt:gz_cc  0.616 -0.025  0.002 -0.829 -0.899  0.016

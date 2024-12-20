@@ -1,0 +1,37 @@
+#########################################
+
+Repeat the pre-registered analysis on only subset knowers
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + (1 | id)
+   Data: S_SB
+
+     AIC      BIC   logLik deviance df.resid 
+   536.2    557.5   -263.1    526.2      523 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.0307 -0.4874 -0.3215  0.3963  4.8691 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.517    1.232   
+Number of obs: 528, groups:  id, 59
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.47528    1.33817  -1.102  0.27026    
+cd1         -1.29194    0.41578  -3.107  0.00189 ** 
+expected    -0.57567    0.14659  -3.927  8.6e-05 ***
+age          0.05895    0.03056   1.929  0.05378 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd
+cd1      -0.011              
+expected -0.282  0.065       
+age      -0.926 -0.154 -0.035

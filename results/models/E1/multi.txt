@@ -1,0 +1,43 @@
+#########################################
+
+Then, we'll look at the Multiplier task.
+
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd2 + expected + CP + age + (1 | id) + (1 | cd1)
+   Data: M
+
+     AIC      BIC   logLik deviance df.resid 
+   999.6   1033.4   -492.8    985.6      913 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7079 -0.5528 -0.2161  0.5570  4.5484 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 1.802    1.342   
+ cd1    (Intercept) 0.000    0.000   
+Number of obs: 920, groups:  id, 115; cd1, 2
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  0.77345    0.83948   0.921   0.3569    
+cd2          0.64282    0.30874   2.082   0.0373 *  
+expected    -1.05157    0.09605 -10.948   <2e-16 ***
+CPTRUE       1.30407    0.41074   3.175   0.0015 ** 
+age          0.02220    0.01802   1.231   0.2181    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd2    expctd CPTRUE
+cd2      -0.239                     
+expected -0.242 -0.074              
+CPTRUE    0.483 -0.021 -0.110       
+age      -0.903  0.070 -0.046 -0.645
+optimizer (Nelder_Mead) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
