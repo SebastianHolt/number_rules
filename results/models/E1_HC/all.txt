@@ -1,0 +1,126 @@
+All Small Sets:
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + CP + expected + age + hc + (1 | id)
+   Data: S
+
+     AIC      BIC   logLik deviance df.resid 
+   926.6    960.5   -456.3    912.6      936 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2440 -0.5082 -0.1885  0.4022  4.5319 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 3.188    1.785   
+Number of obs: 943, groups:  id, 105
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -2.81940    1.20884  -2.332 0.019684 *  
+cd1         -1.60665    0.42337  -3.795 0.000148 ***
+CPTRUE       0.88995    0.53005   1.679 0.093153 .  
+expected    -0.40391    0.11278  -3.581 0.000342 ***
+age          0.07625    0.02778   2.744 0.006061 ** 
+hc           0.02453    0.01321   1.858 0.063218 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    CPTRUE expctd age   
+cd1       0.012                            
+CPTRUE    0.337  0.035                     
+expected -0.243  0.043 -0.020              
+age      -0.914 -0.180 -0.475 -0.029       
+hc        0.309  0.000 -0.139 -0.027 -0.406
+
+
+
+#########################################
+
+Large Sets task
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd1 + expected + age + hc + (1 | id)
+   Data: L
+
+     AIC      BIC   logLik deviance df.resid 
+   362.6    387.9   -175.3    350.6      494 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0145 -0.1380 -0.0651  0.2802  4.4496 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ id     (Intercept) 16.15    4.018   
+Number of obs: 500, groups:  id, 57
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -7.24402    4.15060  -1.745  0.08093 . 
+cd1         -1.99173    1.30350  -1.528  0.12651   
+expected    -0.17415    0.06578  -2.647  0.00811 **
+age          0.13967    0.07450   1.875  0.06084 . 
+hc           0.05734    0.02948   1.945  0.05175 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd1    expctd age   
+cd1       0.010                     
+expected -0.167  0.046              
+age      -0.935 -0.117 -0.053       
+hc        0.211 -0.144 -0.062 -0.392
+
+
+
+#########################################
+
+Multiplier task
+#########################################
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: correct ~ cd2 + expected + CP + age + hc + (1 | id) + (1 | cd1)
+   Data: M
+
+     AIC      BIC   logLik deviance df.resid 
+   932.1    970.0   -458.1    916.1      832 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.5792 -0.5877 -0.2171  0.5750  4.2997 
+
+Random effects:
+ Groups Name        Variance  Std.Dev. 
+ id     (Intercept) 1.933e+00 1.390e+00
+ cd1    (Intercept) 2.565e-09 5.064e-05
+Number of obs: 840, groups:  id, 105; cd1, 2
+
+Fixed effects:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  0.374796   0.946139   0.396   0.6920    
+cd2          0.545238   0.329418   1.655   0.0979 .  
+expected    -0.995963   0.098508 -10.110   <2e-16 ***
+CPTRUE       0.975252   0.423330   2.304   0.0212 *  
+age          0.030286   0.021049   1.439   0.1502    
+hc           0.002032   0.009647   0.211   0.8331    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+         (Intr) cd2    expctd CPTRUE age   
+cd2      -0.188                            
+expected -0.215 -0.060                     
+CPTRUE    0.324  0.016 -0.079              
+age      -0.911  0.038 -0.051 -0.461       
+hc        0.361 -0.065 -0.009 -0.150 -0.452
+optimizer (Nelder_Mead) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+

@@ -10,30 +10,30 @@ Formula: correct ~ cd1 + expected + age + suf + (1 | id)
    Data: S_SB
 
      AIC      BIC   logLik deviance df.resid 
-   537.9    563.6   -263.0    525.9      522 
+   552.6    578.3   -270.3    540.6      531 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--2.0680 -0.4820 -0.3278  0.3973  4.8898 
+-2.0168 -0.5071 -0.3365  0.4084  4.7737 
 
 Random effects:
  Groups Name        Variance Std.Dev.
- id     (Intercept) 1.473    1.213   
-Number of obs: 528, groups:  id, 59
+ id     (Intercept) 1.393    1.18    
+Number of obs: 537, groups:  id, 60
 
 Fixed effects:
             Estimate Std. Error z value Pr(>|z|)   
-(Intercept) -1.66793    1.39281  -1.198  0.23110   
-cd1         -1.28823    0.41169  -3.129  0.00175 **
-expected    -0.51860    0.19259  -2.693  0.00709 **
-age          0.05751    0.03041   1.891  0.05857 . 
-sufTRUE      0.16351    0.36082   0.453  0.65042   
+(Intercept) -1.85431    1.36388  -1.360  0.17396   
+cd1         -1.24129    0.39930  -3.109  0.00188 **
+expected    -0.47260    0.18925  -2.497  0.01252 * 
+age          0.05864    0.02966   1.977  0.04806 * 
+sufTRUE      0.18489    0.35313   0.524  0.60057   
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
          (Intr) cd1    expctd age   
-cd1      -0.015                     
-expected -0.405  0.060              
-age      -0.845 -0.154 -0.092       
-sufTRUE  -0.306  0.015  0.649 -0.102
+cd1      -0.004                     
+expected -0.411  0.059              
+age      -0.843 -0.170 -0.089       
+sufTRUE  -0.313  0.020  0.653 -0.098

@@ -10,34 +10,31 @@ Formula: correct ~ cd2 + expected + CP + age + (1 | id) + (1 | cd1)
    Data: M
 
      AIC      BIC   logLik deviance df.resid 
-   999.6   1033.4   -492.8    985.6      913 
+  1051.7   1085.7   -518.8   1037.7      953 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.7079 -0.5528 -0.2161  0.5570  4.5484 
+-3.5799 -0.5806 -0.2236  0.5779  4.4548 
 
 Random effects:
- Groups Name        Variance Std.Dev.
- id     (Intercept) 1.802    1.342   
- cd1    (Intercept) 0.000    0.000   
-Number of obs: 920, groups:  id, 115; cd1, 2
+ Groups Name        Variance  Std.Dev. 
+ id     (Intercept) 1.722e+00 1.3121477
+ cd1    (Intercept) 3.580e-08 0.0001892
+Number of obs: 960, groups:  id, 120; cd1, 2
 
 Fixed effects:
             Estimate Std. Error z value Pr(>|z|)    
-(Intercept)  0.77345    0.83948   0.921   0.3569    
-cd2          0.64282    0.30874   2.082   0.0373 *  
-expected    -1.05157    0.09605 -10.948   <2e-16 ***
-CPTRUE       1.30407    0.41074   3.175   0.0015 ** 
-age          0.02220    0.01802   1.231   0.2181    
+(Intercept)  0.56727    0.80786   0.702   0.4826    
+cd2          0.66424    0.29613   2.243   0.0249 *  
+expected    -1.03683    0.09289 -11.162   <2e-16 ***
+CPTRUE       1.12345    0.38927   2.886   0.0039 ** 
+age          0.02658    0.01742   1.526   0.1270    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
          (Intr) cd2    expctd CPTRUE
-cd2      -0.239                     
-expected -0.242 -0.074              
-CPTRUE    0.483 -0.021 -0.110       
-age      -0.903  0.070 -0.046 -0.645
-optimizer (Nelder_Mead) convergence code: 0 (OK)
-boundary (singular) fit: see help('isSingular')
-
+cd2      -0.216                     
+expected -0.236 -0.078              
+CPTRUE    0.465 -0.002 -0.097       
+age      -0.902  0.050 -0.054 -0.635

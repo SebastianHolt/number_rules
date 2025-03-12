@@ -53,6 +53,7 @@ save_model_summary <- function(model, experiment, filename, message) {
 mS <- glmer(data=S, correct ~ cd1 + CP + expected + age + ( 1 | id ), family='binomial')
 save_model_summary(mS,'1','1_small',"First, we'll look at the Small Sets task.")
 
+
 # 2. Exploratory model, isolate CP and subset knowers:
 S_SB <- S[S$CP == FALSE,]
 S_CP <- S[S$CP == TRUE,]
@@ -74,6 +75,7 @@ save_model_summary(mS_SBkl,'1','4_small_kl',"For subset knowers, does knower lev
 mS_SBsuf <- glmer(data=S_SB, correct ~ cd1 + expected + age + suf + ( 1 | id ), family='binomial')
 save_model_summary(mS_SBsuf,'1','5_small_suf',"For subset knowers, does knowing the target predict additive responses?")
 
+
 ###############################
 
 
@@ -89,7 +91,7 @@ save_model_summary(mL,'1','large',"Then, we'll look at the Large Sets task.")
 # E1 C. Multiplier Task ---------------------------------------------------------------
 
 # 1. Pre-registered model, WITHOUT highest-count:
-mM <- glmer(data=M, correct ~ cd2 + expected + CP + age + ( 1 | id ) + ( 1 | cd1 ), family='binomial') # singular fit
+mM <- glmer(data=M, correct ~ cd2 + expected + CP + age + ( 1 | id ) + ( 1 | cd1 ), family='binomial')
 save_model_summary(mM,'1','multi',"Then, we'll look at the Multiplier task.")
 
 
@@ -164,6 +166,43 @@ close(connect)
 
 ###############################
 
+# Correlation of factors
+cor(as.numeric(as.factor(S$CP)), S$age)
+
+###### Try out the version with HC as a predictor
+mS <- glmer(data=S, correct ~ cd1 + CP + expected + age + hc + ( 1 | id ), family='binomial')
+mL <- glmer(data=L, correct ~ cd1 + expected + age + hc + ( 1 | id ), family='binomial')
+mM <- glmer(data=M, correct ~ cd2 + expected + CP + age + hc + ( 1 | id ) + ( 1 | cd1 ), family='binomial')  # is singular
+
+path <- paste0("../results/models/E1_HC/all.txt")
+connect <- file(path, open = "wt")
+sink(connect, type = "message")
+message(paste0('All Small Sets:', "\n#########################################\n"))
+sink(type = "message")  # Close the message sink
+sink(connect, type = "output")
+print(summary(mS))
+sink()  # Close the output sink
+
+sink(connect, type = "message")
+message("\n\n\n#########################################\n")
+message(paste0('Large Sets task', "\n#########################################\n"))
+sink(type = "message")  # Close the message sink
+sink(connect, type = "output")
+print(summary(mL))
+sink()  # Close the output sink
+
+sink(connect, type = "message")
+message("\n\n\n#########################################\n")
+message(paste0('Multiplier task', "\n#########################################\n"))
+sink(type = "message")  # Close the message sink
+sink(connect, type = "output")
+print(summary(mM))
+sink()  # Close the output sink
+close(connect)
+
+
+##################
+
 
 
 # E2 The Only Task ---------------------------------------------------------------
@@ -181,3 +220,5 @@ mGZ <- glmer(data = Z, correct ~ cond * giraffe_nums + target * gz_acc + (1|ID),
 save_model_summary(mGZ,'2','memory',"Did accurate recall of unit words predict generalization accuracy?")
 
 #############################
+
+
